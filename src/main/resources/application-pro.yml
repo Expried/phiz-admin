@@ -23,9 +23,6 @@ restrict:
 lock: 
   zookeeper-url: 120.77.69.63
   redis-url: 
-hz:
-  BackfillUrl: http://hzop.24-a.com:9099/hzop/backfillHzb/Backfill.do
-  UpdateOrderUrl:  http://hzop.24-a.com:9099/hzop/backfillHzb/updateOrderStatus.do
 thread: 
     coreSize: 80
     maxSize: 100

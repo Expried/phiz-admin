@@ -74,12 +74,12 @@ public class BaseEntity implements Serializable {
     /** 
      * 创建时间
     */ 
-    private Date createtime;
+    private Date createTime;
 
     /** 
      * 修改时间
     */ 
-    private Date modiftime;
+    private Date modifyTime;
 
     /** 
      * 修改者
@@ -111,20 +111,20 @@ public class BaseEntity implements Serializable {
 		this.creator = creator;
 	}
 
-	public Date getCreatetime() {
-		return createtime;
+	public Date getCreateTime() {
+		return createTime;
 	}
 
-	public void setCreatetime(Date createtime) {
-		this.createtime = createtime;
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
 	}
 
-	public Date getModiftime() {
-		return modiftime;
+	public Date getModifyTime() {
+		return modifyTime;
 	}
 
-	public void setModiftime(Date modiftime) {
-		this.modiftime = modiftime;
+	public void setModifyTime(Date modifyTime) {
+		this.modifyTime = modifyTime;
 	}
 
 	public String getModifier() {

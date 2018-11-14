@@ -10,7 +10,7 @@ server:
 spring:
     # 环境 dev|test|pro | pro-1
     profiles:
-        active: pro 
+        active: dev 
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
         driverClassName: com.mysql.jdbc.Driver
@@ -35,7 +35,7 @@ spring:
         static-locations: classpath:/static/,classpath:/views/
 # Mybatis配置
 mybatis:
-    mapperLocations: mapper/com/hz/fare/**/dao/mapper/*Dao.xml
+    mapperLocations: mapper/com/business/**/dao/mapper/*Dao.xml
     type-aliases-package: com.hz.fare.business.**.entity
 # 分页插件配置
 pagehelper: 

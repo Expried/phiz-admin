@@ -9,7 +9,7 @@
         </commentGenerator>  
         
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->  
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://119.23.131.196:3308/fare"   userId="root" password="root">  
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://daikuanniao.mysql.rds.aliyuncs.com:3306/phiz"   userId="root" password="Chengxu1990">  
                 <property name="useInformationSchema" value="true"></property>
         </jdbcConnection>   
   
@@ -20,7 +20,7 @@
         </javaTypeResolver>  
   
         <!-- targetProject:生成PO类的位置 -->  
-        <javaModelGenerator targetPackage="com.hz.fare.business.order.entity" targetProject="hzfare-core/src/main/java">  
+        <javaModelGenerator targetPackage="com.business.img.entity" targetProject="phiz/src/main/java">  
             <!-- enableSubPackages:是否让schema作为包的后缀 -->  
             <property name="enableSubPackages" value="false" />  
             <!-- 从数据库返回的值被清理前后的空格 -->  
@@ -28,19 +28,19 @@
         </javaModelGenerator>  
         
         <!-- targetProject:mapper映射文件生成的位置 -->  
-        <sqlMapGenerator targetPackage="com.hz.fare.business.order.dao.mapper"    targetProject="hzfare-core/src/main/java">  
+        <sqlMapGenerator targetPackage="com.business.img.dao.mapper"    targetProject="phiz/src/main/java">  
             <!-- enableSubPackages:是否让schema作为包的后缀 -->  
             <property name="enableSubPackages" value="false" />  
         </sqlMapGenerator>  
         
         <!-- targetPackage：mapper接口生成的位置 -->  
-        <javaClientGenerator type="XMLMAPPER"  targetPackage="com.hz.fare.business.order.dao"  targetProject="hzfare-core/src/main/java">  
+        <javaClientGenerator type="XMLMAPPER"  targetPackage="com.business.img.dao"  targetProject="phiz/src/main/java">  
             <!-- enableSubPackages:是否让schema作为包的后缀 -->  
             <property name="enableSubPackages" value="false" />  
         </javaClientGenerator>  
         
         <!-- 指定数据库表 -->  
-        <table tableName="tab_worldspan_price"  enableCountByExample="false"
+        <table tableName="img_data"  enableCountByExample="false"
         enableUpdateByExample="false"
         enableDeleteByExample="false"
         enableSelectByExample="false"

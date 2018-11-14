@@ -82,7 +82,7 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T> {
 	@Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.DEFAULT,timeout=36000,rollbackFor=Throwable.class)
 	public int insert(T record) throws HzBaseException {
 		genId(record);
-		record.setCreatetime(new Date());
+		record.setCreateTime(new Date());
 		return dao.insert(record);
 	}
 
@@ -90,7 +90,7 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T> {
 	@Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.DEFAULT,timeout=36000,rollbackFor=Throwable.class)
 	public int insertSelective(T record) throws HzBaseException {
 		genId(record);
-		record.setCreatetime(new Date());
+		record.setCreateTime(new Date());
 		return dao.insertSelective(record);
 	}
 
@@ -102,14 +102,14 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T> {
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.DEFAULT,timeout=36000,rollbackFor=Throwable.class)
 	public int updateByPrimaryKeySelective(T record) throws HzBaseException {
-		record.setModiftime(new Date());
+		record.setModifyTime(new Date());
 		return dao.updateByPrimaryKeySelective(record);
 	}
 
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.DEFAULT,timeout=36000,rollbackFor=Throwable.class)
 	public int updateByPrimaryKey(T record) {
-		record.setModiftime(new Date());
+		record.setModifyTime(new Date());
 		return dao.updateByPrimaryKey(record);
 	}
 
@@ -165,8 +165,8 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T> {
 	public boolean insertBatch(List<T> datas) {
 		for (T data : datas) {
 			genId(data);
-			data.setCreatetime(new Date());
-			data.setModiftime(new Date());
+			data.setCreateTime(new Date());
+			data.setModifyTime(new Date());
 		}
 		int totl = dao.insertBatch(datas);
 		return totl > 0;

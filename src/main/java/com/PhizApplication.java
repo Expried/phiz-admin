@@ -12,12 +12,9 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import com.alibaba.dubbo.spring.boot.annotation.EnableDubboConfiguration;
-
 @SpringBootApplication
 @ServletComponentScan
 @CrossOrigin // 允许跨越访问
-@EnableDubboConfiguration
 @EnableTransactionManagement
 @Lazy(value = false)
 @ComponentScan
