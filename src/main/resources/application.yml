@@ -1,0 +1,63 @@
+# Tomcat
+server:
+    tomcat:
+        uri-encoding: UTF-8
+        max-threads: 1000
+        min-spare-threads: 30
+    port: 8888
+
+# mysql
+spring:
+    # 环境 dev|test|pro | pro-1
+    profiles:
+        active: pro 
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.jdbc.Driver
+    redis:
+      database: 2
+    dubbo:   
+        application:  
+          #注册在注册中心的名称，唯一标识，请勿重复  
+            name: hz-fare 
+        #暴露服务方式  
+        protocol:  
+          #通讯协议 
+          name: dubbo  
+          #暴露服务端口 （默认是20880，修改端口，不同的服务提供者端口不能重复）   
+          port: 20881  
+          #调用dubbo组建扫描的项目路径  
+        scan: com.hz.fare.api 
+        provider: 
+          filter: dubboFilter
+    # 指定静态资源的路径
+    resources:
+        static-locations: classpath:/static/,classpath:/views/
+# Mybatis配置
+mybatis:
+    mapperLocations: mapper/com/hz/fare/**/dao/mapper/*Dao.xml
+    type-aliases-package: com.hz.fare.business.**.entity
+# 分页插件配置
+pagehelper: 
+  helper-dialect: mysql
+  reasonable: true
+  methodsarguments: true
+  returnPageInfo: true
+  params: count=countSql
+#id 生成策略配置
+idgenerate: 
+    #机器实例的生产者编号 
+    workerId: 0
+    #数据中心编号
+    datacenterId: 0
+#分布式任务管理     
+xxl: 
+  job:
+    executor:
+      appname: hz-fare
+#线程池配置
+thead: 
+  croe: 30
+  max: 100
+  capa: 1000
+  keep: 300

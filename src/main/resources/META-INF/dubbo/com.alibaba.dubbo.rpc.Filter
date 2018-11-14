@@ -1,0 +1,1 @@
+dubboFilter=com.hz.fare.common.filter.DubboFilter
